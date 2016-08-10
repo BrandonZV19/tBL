@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">BasicLocation</string>
+    <string name="StringUsuario">Usuario</string>
+    <string name="StringPassword">Contraseña</string>
+    <string name="StringAceptar">Aceptar</string>
+    <string name="StringCancelar">Cancelar</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="StringPreferencias">Preferencias</string>
+    <string name="StringIDUsuarioGuardado">PreferenceIDUsuario</string>
+    <string name="StringNickUsuarioGuardado">PreferenceNickUsuario</string>
+    <string name="StringNombreUsuarioGuardado">PreferenceNombreUsuario</string>
+    <string name="StringURLFotoUsuarioGuardada">PreferenceURLFotoUsuario</string>
+    <string name="StringContraseñaGuardada">PreferenceContraseña</string>
+    <string name="StringActivaUbicacion">Por favor activa algún servivio de ubicación</string>
+    <string name="StringSolucionesTai">Soluciones T@i</string>
+    <string name="StringMenuCerrarSesion">Cerrar sesión</string>
+    <string name="StringMenuPreferencias">Preferencias</string>
+    <string name="StringMenuSitios">Sitios</string>
+    <string name="StringMenuBuscar">Buscar</string>
+    <string name="StringFrecSegundos">PreferenceSegundos</string>
+    <string name="StringFrecMetros">PreferenceMetros</string>
+
+
+    <string-array name="elegir_sonido">
+        <item> Juego de 8 bits </item>
+        <item> Suave </item>
+        <item> Emergencia </item>
+    </string-array>
+
+    <string-array name="elegir_sonido_values">
+        <item> 0 </item>
+        <item> 1 </item>
+        <item> 2 </item>
+    </string-array>
+
+
+    <string-array name="frec_sincronizacion">
+        <item> 10 segundos</item>
+        <item> 20 segundos</item>
+        <item> 40 segundos</item>
+        <item> 1 minuto </item>
+    </string-array>
+
+    <string-array name="frec_sincronizacion_values">
+        <item> 0 </item>
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+    </string-array>
+
+    <string-array name="opcionesHA">
+        <item>Fecha</item>
+        <item>Usuario</item>
+    </string-array>
+
+    <string-array name="opcionesHS">
+        <item>Enviados</item>
+        <item>No enviados</item>
+    </string-array>
+
+    <string name="title_activity_mm">Map</string>
+    <string name="title_activity_street_view">Street</string>
+    <string name="title_activity_select_site">Map</string>
+</resources>

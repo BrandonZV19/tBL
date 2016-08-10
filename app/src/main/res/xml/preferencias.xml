@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Usuario" >
+
+        <CheckBoxPreference
+            android:key="mantener_sesion"
+            android:title="Mantener Sesión"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Alertas">
+        <CheckBoxPreference
+            android:title="Icono/Barra"
+            android:key="icono_barra"/>
+
+        <CheckBoxPreference
+            android:title="Sonido"
+            android:key="sonido"/>
+
+        <ListPreference
+            android:title="Elegir Sonido"
+            android:key="elegir_sonido"
+            android:entries="@array/elegir_sonido"
+            android:entryValues="@array/elegir_sonido_values"
+            android:defaultValue="1"/>
+
+        <CheckBoxPreference
+            android:title="Toast de confirmacion"
+            android:key="toast"/>
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="Localización">
+
+        <CheckBoxPreference
+            android:title="Sincronización"
+            android:key="sincronizacion"/>
+
+        <ListPreference
+            android:title="Frecuencia minima de ubicación"
+            android:key="frec_sincronizacion"
+            android:entries="@array/frec_sincronizacion"
+            android:entryValues="@array/frec_sincronizacion_values"
+            android:defaultValue="1"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Registros locales">
+        <Preference
+            android:title="Eliminar datos"
+            android:key="borrar_bd"/>
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
