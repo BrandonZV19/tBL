@@ -19,6 +19,7 @@
     <string name="StringMenuBuscar">Buscar</string>
     <string name="StringFrecSegundos">PreferenceSegundos</string>
     <string name="StringFrecMetros">PreferenceMetros</string>
+    <string name="place_details"></string>
 
 
     <string-array name="elegir_sonido">

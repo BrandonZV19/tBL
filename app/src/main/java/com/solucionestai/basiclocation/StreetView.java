@@ -74,8 +74,11 @@ public class StreetView extends FragmentActivity implements OnStreetViewPanorama
                     Double lat=panorama.getLocation().position.latitude;
                     Double log=panorama.getLocation().position.longitude;
                     Intent intent = new Intent(StreetView.this, SelectSite.class);
-                    intent.putExtra("StreetLat",lat);
-                    intent.putExtra("StreetLog",log);
+                    if (lat!=0 && log!=0){
+                        intent.addCategory("eFromStreet");
+                        intent.putExtra("StreetLat",lat);
+                        intent.putExtra("StreetLog",log);
+                    }
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
@@ -112,6 +115,18 @@ public class StreetView extends FragmentActivity implements OnStreetViewPanorama
         }
 
         Log.e("onStart justView",justView+" fromMap: "+fromMap);
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (getIntent().hasCategory("hSitio") ||
+                getIntent().hasCategory("hAlert")){
+            justView=true;
+        }
+        if (getIntent().hasCategory("eFromMap")){
+            fromMap=true;
+        }
     }
 
     @Override
@@ -196,11 +211,17 @@ public class StreetView extends FragmentActivity implements OnStreetViewPanorama
         }else if (fromMap) {
             final double lat,log;
             String flat,flog;
+
+            /*
             flat=df.format(getIntent().getDoubleExtra("MapLat",0));
             flog=df.format(getIntent().getDoubleExtra("MapLog",0));
 
-            lat=Double.valueOf(flat);
-            log=Double.valueOf(flog);
+            lat=Double.parseDouble(flat);
+            log=Double.parseDouble(flog);
+            */
+
+            lat=getIntent().getDoubleExtra("MapLat",0);
+            log=getIntent().getDoubleExtra("MapLog",0);
 
             LatLng loc=new LatLng(lat,log);
 

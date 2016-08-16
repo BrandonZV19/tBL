@@ -397,14 +397,13 @@ public class SitioEdit extends AppCompatActivity {
         street.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SitioEdit.this, StreetView.class);
+                Intent intent = new Intent(SitioEdit.this, SelectSite.class);
                 startActivity(intent);
             }
         });
 
-
-
     }
+
 
     public static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
