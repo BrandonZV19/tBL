@@ -614,6 +614,8 @@ public class ForegroundActivity extends Service implements LocationListener, Goo
 
                 soundAlert.start();
 
+                soundAlert.setLooping(true);
+
                 soundAlert.setOnErrorListener(new MediaPlayer.OnErrorListener() {
                     @Override
                     public boolean onError(MediaPlayer mp, int what, int extra) {
@@ -704,6 +706,10 @@ public class ForegroundActivity extends Service implements LocationListener, Goo
                         .show();
             }
         }
+        soundAlert.pause();
+        soundAlert.stop();
+        soundAlert.reset();
+        soundAlert.release();
     }
 
     @Override

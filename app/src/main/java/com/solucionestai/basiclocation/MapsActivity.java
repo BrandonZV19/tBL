@@ -369,6 +369,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                                             .title(titulo)
                                             .snippet(mensaje)
                                             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE)));
+
+                                    mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
                                 }
                             }
                         }
@@ -392,6 +394,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         .title(titulo)
                                         .snippet(mensaje)
                                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE)));
+
+                                mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
                             }
                             cc.close();
                             idAlert=idAlert-1;
@@ -426,6 +430,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)))
                     .showInfoWindow();
 
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
+
         }
 
         if (getIntent().hasCategory("hSitio")){
@@ -444,6 +450,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .snippet(msj)
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)))
                     .showInfoWindow();
+
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
         }
 
     }
@@ -473,11 +481,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     .strokeWidth((float) (radius/4))
                     .radius(radius));
 
-            if (contadorLocaciones <= 2) {
-
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 14));
-            } else {
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
+            if (!getIntent().hasExtra("idAlerta") && !getIntent().hasCategory("hSitio") &&
+                    !getIntent().hasCategory("hAlert")){
+                if (contadorLocaciones <= 2) {
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 14));
+                } else {
+                    mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
+                }
             }
 
             Cursor cc = db.rawQuery("SELECT idRegistro from Usuario" + idUsuario, null);
@@ -1065,6 +1075,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                                             .title(titulo)
                                             .snippet(mensaje)
                                             .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE)));
+
+                                    mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
                                 }
                             }
                         }
@@ -1088,6 +1100,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                                         .title(titulo)
                                         .snippet(mensaje)
                                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE)));
+
+                                mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
                             }
                             cc.close();
                             idAlert=idAlert-1;
@@ -1128,6 +1142,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)))
                         .showInfoWindow();
 
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
+
             }
 
             if (getIntent().hasCategory("hSitio")){
@@ -1146,6 +1162,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         .snippet(msj)
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)))
                         .showInfoWindow();
+
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(loc));
             }
 
         }
