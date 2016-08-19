@@ -107,7 +107,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     isConnectedToInternet isConnected;
 
-    ImageButton alerta0;
+    ImageButton alerta0, bLocation;
 
     View vAlerta0;
     EditText observacionesA0;
@@ -269,6 +269,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             });
 
+            bLocation=(ImageButton)findViewById(R.id.bLocation);
+            bLocation.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    LatLng loc = new LatLng(locacion.getLatitude(), locacion.getLongitude());
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 14));
+                }
+            });
 
             dbc = new DBConnection(MapsActivity.this, "RegistrosLoc", null, 1);
             db = dbc.getWritableDatabase();

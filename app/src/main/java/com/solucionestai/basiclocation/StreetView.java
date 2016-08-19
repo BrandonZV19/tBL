@@ -29,7 +29,7 @@ public class StreetView extends FragmentActivity implements OnStreetViewPanorama
     Location location;
     StreetViewPanorama panorama;
     Button Ok,Re,hecho;
-    DecimalFormat df = new DecimalFormat("#.######");
+    //DecimalFormat df = new DecimalFormat("#.######");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

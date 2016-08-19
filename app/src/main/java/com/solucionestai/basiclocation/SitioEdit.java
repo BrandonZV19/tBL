@@ -54,7 +54,7 @@ public class SitioEdit extends AppCompatActivity {
     DBConnection dbc;
     SQLiteDatabase db;
     ProgressDialog progressDialog;
-    DecimalFormat df = new DecimalFormat("#.######");
+    //DecimalFormat df = new DecimalFormat("#.######");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,8 +165,8 @@ public class SitioEdit extends AppCompatActivity {
                                     sitio.setCostoLu(costo);
                                     sitio.setObservacionesLu(observaciones);
                                     sitio.setIdUsuarioLu(idUsuario);
-                                    sitio.setLatitudLu(df.format(lu_latitud));
-                                    sitio.setLongitudLu(df.format(lu_longitud));
+                                    sitio.setLatitudLu(String.valueOf(lu_latitud));
+                                    sitio.setLongitudLu(String.valueOf(lu_longitud));
                                     sitio.setFechaHoraLu(dateTime);//samefix
                                     sitio.setArriba(3);
                                     sitio.setCorreoLu(correo);

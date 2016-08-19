@@ -108,6 +108,8 @@ public class SelectSite extends FragmentActivity implements OnMapReadyCallback,G
                 intent.addCategory("eFromMap");
                 //intent.putExtra("MapLat",df.format(lat));
                 //intent.putExtra("MapLog",df.format(lng));
+                lat=markerDa.getPosition().latitude;
+                lng=markerDa.getPosition().longitude;
 
                 intent.putExtra("MapLat",lat);
                 intent.putExtra("MapLog",lng);
